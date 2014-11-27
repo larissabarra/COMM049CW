@@ -1,0 +1,98 @@
+@media screen and (min-width: 655px) {
+    /* ================= MAIN ================= */
+    #mapSlider {
+        height: 100%;
+        height: calc(100% - 125px);
+        height: -webkit-calc(100% - 125px);
+        height: -moz-calc(100% - 125px);
+        height: -o-calc(100% - 125px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* ================= HEADERS AND FOOTERS ================= */
+    #mainHeader, #searchesHeader {
+        height: auto;
+    }
+
+    .footer {
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .button {
+        float: none;
+    }
+
+    .header h2 {
+        margin: 0 5%;
+        line-height: 100%;
+    }
+
+    /* ================= SEARCHES ================= */
+    .titleSearch {
+        width: 80%;
+    }
+
+    #searchesSection {
+        height: auto;
+        margin-bottom: 50px;
+    }
+
+    #searches div div {
+        height: auto !important;
+    }
+
+    #searches {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 400px){
+    /* ================= INDEX ================= */
+    #loginSection {
+        width: 35%;
+        margin: 2%;
+        float: left;
+    }
+
+    #svgSection {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* ================= INDEX ================= */
+    #loginSection, #svgSection {
+        float: none;
+        width: 90%;
+        margin: 5%;
+    }
+
+    #svgSection {
+        margin-bottom: 50px;
+    }
+
+    /* ================= HEADERS AND FOOTERS ================= */
+    .credits {
+        margin: 0 1%;
+    }
+
+    .footer {
+        line-height: 100% !important;
+    }
+
+    /* ================= MAIN ================= */
+    #mapSlider {
+        height: 100%;
+        height: calc(100% - 245px);
+        height: -webkit-calc(100% - 245px);
+        height: -moz-calc(100% - 245px);
+        height: -o-calc(100% - 245px);
+    }
+
+    #activeControlLabels label {
+        margin: 0;
+    }
+}
