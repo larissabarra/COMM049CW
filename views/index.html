@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en-GB" manifest="offline.appcache">
+<head>
     <meta charset="UTF-8">
+    <meta name="description" content="">
     <title></title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/mediaqueries.css" rel="stylesheet" type="text/css"/>
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
 </head>
 <body>
+<header id="indexHeader" class="header">
+    <h1>Name</h1>
+</header>
+<section id="loginSection">
+    <header>
+        <h1>Login!</h1>
+    </header>
 
+    <div id="fieldsSection">
+        <form method="post" id="login" action="/view">
+            <label for="name">Name</label><br/>
+            <input type="text" id="name" name="name" required="required"><br/>
+            <label for="name">Password</label><br/>
+            <input type="password" id="password" name="password" required="required"><br/>
+            <input type="button" value="Log in" onclick="saveSession();" class="button" id="loginButton">
+        </form>
+    </div>
+</section>
+
+<section id="svgSection">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 300px;">
+        <defs>
+            <pattern id="compass" patternUnits="userSpaceOnUse" width="300" height="300">
+                <image xlink:href="images/compass.png" x="0" y="0" width="300" height="300" />
+            </pattern>
+            <linearGradient id="pointer" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                <stop offset="50%" style="stop-color:rgb(150,150,150);stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <circle cx="150" cy="150" r="150" fill="url(#compass)"/>
+        <g id="R1" transform="translate(150 150)">
+            <ellipse rx="100" ry="8" fill="url(#pointer)">
+                <animateTransform attributeName="transform" type="rotate" dur="7s" from="0" to="360" repeatCount="indefinite"/>
+            </ellipse>
+        </g>
+        Sorry, your browser does not support inline SVG.
+    </svg>
+    <footer><h1>Find your what you're looking for<br/>anywhere, anytime</h1></footer>
+</section>
+<div class="clear"></div>
+<footer id="indexFooter" class="footer"><span class="credits">COMM049 Coursework - Class of 2014 - Larissa Barra Conde</span></footer>
+
+<script>
+    function saveSession() {
+        var username = $("#name").val();
+        if(username.length == 0) {
+            $("#name").val("").focus();
+            alert("Your name is a mandatory field!");
+            return;
+        }
+        var password = $("#password").val();
+        if(password.length == 0) {
+            $("#password").val("").focus();
+            alert("Your password is a mandatory field!");
+            return;
+        }
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('password', password);
+
+        $("#login").submit();
+    }
+</script>
 </body>
 </html>
