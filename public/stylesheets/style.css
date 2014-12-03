@@ -12,7 +12,8 @@ html, body{
 }
 
 body {
-    background: url('../images/bg.jpg') center center no-repeat fixed;
+    background: url('../images/bg.jpg') center center no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
@@ -30,6 +31,14 @@ body {
 
 .clear{
     clear: both;
+}
+
+#limit {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
 }
 
 textarea, input {
@@ -133,16 +142,21 @@ input[type="submit"] {
     text-transform: capitalize;
 }
 
+.smaller {
+    font-size: 0.8em;
+    text-transform: initial;
+}
+
 .header h2 {
     padding: 0;
     margin: 0 10%;
 }
 
-.header h2 a {
+.header h2 a, .header h1 .smaller a {
     color: #f90;
 }
 
-.header h2 a:hover {
+.header h2 a:hover, .header h1 .smaller a:hover {
     text-transform: uppercase;
 }
 
@@ -194,18 +208,21 @@ input[type="submit"] {
     line-height: 150%;
 }
 #loginSection {
+    width: 20%;
+    max-width: 400px;
+    float: right;
+    line-height: 150%;
+}
+
+.box {
     text-align: center;
     margin: 0 auto;
 
-    line-height: 150%;
-    font-size: 1.2em;
+    line-height: 130%;
+    font-size: 1.5em;
 
-    width: 20%;
     padding: 2%;
-    margin: 6%;
-    max-width: 400px;
-    float: right;
-
+    margin: 5%;
     background: #3b679e; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNiNjc5ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzJiODhkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -267,6 +284,10 @@ input[type="submit"] {
     -moz-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .52);
     -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .52);
     -o-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .52);
+}
+
+.slide {
+    color: #333 !important;
 }
 
 /* ================= MAIN - SLIDER ================= */
