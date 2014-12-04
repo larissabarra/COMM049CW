@@ -2,20 +2,19 @@
 /*
  * GET home page.
  */
-var __dirname = 'workspace/COMM049CW/views';
 
 exports.index = function(request, response){
-    response.sendfile(__dirname + '/index.html');
+  response.sendfile('./views/index.html');
 };
 
 exports.view = function(request, response){
-    response.sendfile(__dirname + '/main.html');
+    response.sendfile('./views/main.html');
 };
 
 exports.logout = function(request, response){
-    response.sendfile(__dirname + '/logout.html');
+    response.sendfile('./views/logout.html');
 };
 
 exports.searches = function(request, response){
-    response.sendfile(__dirname + '/searches.html');
+    response.sendfile('./views/searches.html');
 };

@@ -26,11 +26,8 @@
     }
 
     .header h2 {
-        margin: 0 0.8%;
-    }
-
-    .header h1 {
-        line-height: 110%;
+        margin: 0 5%;
+        line-height: 100%;
     }
 
     /* ================= SEARCHES ================= */
@@ -89,10 +86,10 @@
     /* ================= MAIN ================= */
     #mapSlider {
         height: 100%;
-        height: calc(100% - 160px);
-        height: -webkit-calc(100% - 160px);
-        height: -moz-calc(100% - 160px);
-        height: -o-calc(100% - 160px);
+        height: calc(100% - 245px);
+        height: -webkit-calc(100% - 245px);
+        height: -moz-calc(100% - 245px);
+        height: -o-calc(100% - 245px);
     }
 
     #activeControlLabels label {

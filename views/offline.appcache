@@ -1,25 +1,21 @@
 CACHE MANIFEST
-# 03 December 2014 19:30
+# 18 June 2014 16:03
 
 # explicitly cached entries
 CACHE:
 index.html
+main.html
 searches.html
 logout.html
-main.html
-../public/stylesheets/style.css
-../public/stylesheets/mediaqueries.css
-../public/javascripts/searches.js
-../public/images/compass.png
-../public/images/logout.png
-../public/images/bg.jpg
+stylesheets/style.css
+stylesheets/mediaqueries.css
 http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
 http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js
 http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css
 
 # resources that require connectivity to function
 NETWORK:
-*
+main.html
 
 FALLBACK:
 / /offline.html

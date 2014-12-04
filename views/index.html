@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-GB" manifest="offline.appcache" type="text/cache-manifest">
+<html lang="en-GB" manifest="offline.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>NexÜ - save for later</title>
+    <title></title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <link href="../public/stylesheets/style.css" rel="stylesheet" type="text/css"/>
-    <link href="../public/stylesheets/mediaqueries.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/mediaqueries.css" rel="stylesheet" type="text/css"/>
     <!--[if gte IE 9]>
     <style type="text/css">
         .gradient {
@@ -22,65 +19,49 @@
 </head>
 <body>
 <header id="indexHeader" class="header">
-    <h1>NexÜ : save for later</h1>
+    <h1>Name</h1>
 </header>
-<div id="limit">
-    <section id="loginSection" class="box">
-        <header>
-            <h1>Login!</h1>
-        </header>
+<section id="loginSection">
+    <header>
+        <h1>Login!</h1>
+    </header>
 
-        <div id="fieldsSection">
-            <form method="post" id="login" action="/view">
-                <label for="name">Name</label><br/>
-                <input type="text" id="name" name="name" required="required"><br/>
-                <label for="name">Where are you?</label><br/>
-                <input type="text" id="currentLocation" name="currentLocation" required="required"><br/>
-                <input type="button" value="Log in" onclick="saveSession();" class="button" id="loginButton">
-            </form>
-        </div>
-    </section>
+    <div id="fieldsSection">
+        <form method="post" id="login" action="/view">
+            <label for="name">Name</label><br/>
+            <input type="text" id="name" name="name" required="required"><br/>
+            <label for="name">Password</label><br/>
+            <input type="password" id="password" name="password" required="required"><br/>
+            <input type="button" value="Log in" onclick="saveSession();" class="button" id="loginButton">
+        </form>
+    </div>
+</section>
 
-    <section id="svgSection">
-        <header class="box">
-            <h1>How does it work?</h1>
-            <p>Enter your name and location and save your searches.<br/>When you're offline, you can log in on the same browser, with your name and any location you've entered before, and see your saved searches for that location!</p>
-        </header>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 300px;">
-            <defs>
-                <pattern id="compass" patternUnits="userSpaceOnUse" width="300" height="300">
-                    <image xlink:href="../public/images/compass.png" x="0" y="0" width="300" height="300" />
-                </pattern>
-                <linearGradient id="pointer" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:rgb(150,150,150);stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <circle cx="150" cy="150" r="150" fill="url(#compass)"/>
-            <g id="R1" transform="translate(150 150)">
-                <ellipse rx="100" ry="8" fill="url(#pointer)">
-                    <animateTransform attributeName="transform" type="rotate" dur="7s" from="0" to="360" repeatCount="indefinite"/>
-                </ellipse>
-            </g>
-            Sorry, your browser does not support inline SVG.
-        </svg>
-        <footer><h1>Find your what you were looking for<br/>anywhere, anytime</h1></footer>
-    </section>
-    <div class="clear"></div>
-</div>
-<footer id="indexFooter" class="footer">
-    <span class="credits">COMM049 Coursework - Class of 2014 - Larissa Barra Conde</span>
-</footer>
+<section id="svgSection">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 300px;">
+        <defs>
+            <pattern id="compass" patternUnits="userSpaceOnUse" width="300" height="300">
+                <image xlink:href="images/compass.png" x="0" y="0" width="300" height="300" />
+            </pattern>
+            <linearGradient id="pointer" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                <stop offset="50%" style="stop-color:rgb(150,150,150);stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <circle cx="150" cy="150" r="150" fill="url(#compass)"/>
+        <g id="R1" transform="translate(150 150)">
+            <ellipse rx="100" ry="8" fill="url(#pointer)">
+                <animateTransform attributeName="transform" type="rotate" dur="7s" from="0" to="360" repeatCount="indefinite"/>
+            </ellipse>
+        </g>
+        Sorry, your browser does not support inline SVG.
+    </svg>
+    <footer><h1>Find your what you're looking for<br/>anywhere, anytime</h1></footer>
+</section>
+<div class="clear"></div>
+<footer id="indexFooter" class="footer"><span class="credits">COMM049 Coursework - Class of 2014 - Larissa Barra Conde</span></footer>
 
 <script>
-    $(function() {
-        if(!(navigator.onLine)) $("#login").attr('action', '/searches.html');
-    });
-
-    window.addEventListener("offline", function(e) {
-        $("#login").attr('action', '/searches.html');
-    }, false);
-
     function saveSession() {
         var username = $("#name").val();
         if(username.length == 0) {
@@ -88,14 +69,14 @@
             alert("Your name is a mandatory field!");
             return;
         }
-        var currentLocation = $("#currentLocation").val();
-        if(currentLocation.length == 0) {
-            $("#currentLocation").val("").focus();
-            alert("Your current location is a mandatory field!");
+        var password = $("#password").val();
+        if(password.length == 0) {
+            $("#password").val("").focus();
+            alert("Your password is a mandatory field!");
             return;
         }
         sessionStorage.setItem('username', username);
-        sessionStorage.setItem('currentLocation', currentLocation);
+        sessionStorage.setItem('password', password);
 
         $("#login").submit();
     }
